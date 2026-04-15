@@ -22,15 +22,16 @@ int sumOfSteps (int n) {
     }
 }
 
-int main () {
-    int N;
-    printf("Masukkan nilai N: ");
-    scanf("%d", &N);
+int main() {
+    int T;
+    scanf("%d", &T);
 
-    for (int i = 0; i < N; i++) {
-        int steps = sumOfSteps(i);
+    for (int i = 0; i < T; i++) {
+        int N;
+        scanf("%d", &N);
         printf("LANGKAH %d\n", sumOfSteps(N));
     }
+
     return 0;
 }
 
