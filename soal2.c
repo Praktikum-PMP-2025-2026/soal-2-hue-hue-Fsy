@@ -10,26 +10,27 @@
 
 #include <stdio.h>
 
-void sumOfSteps (int n) {
-    int langkah = 0;
-    while (n != 1) {
-        if (n % 2 == 0) {
-            n /= 2; // Jika n genap, bagi dengan 2
-            langkah++;
-        } else {
-            n = 3 * n + 1; // Jika n ganjil, kalikan dengan 3 dan tambahkan 1
-            langkah++;
-        }
-        return 0; 
+int sumOfSteps (int n) {
+    if (n == 1) {
+        return 0;
     }
-    printf("%d\n", langkah); // Tampilkan jumlah langkah yang diperlukan untuk mencapai 1
+
+    if (n % 2 == 0) {
+        return 1 + sumOfSteps(n / 2);
+    } else {
+        return 1 + sumOfSteps(3 * n + 1);
+    }
 }
 
 int main () {
     int N;
-    printf("%d\n", N);
+    printf("Masukkan nilai N: ");
     scanf("%d", &N);
-    sumOfSteps(N);
+
+    for (int i = 0; i < N; i++) {
+        int steps = sumOfSteps(i);
+        printf("LANGKAH %d\n", sumOfSteps(N));
+    }
     return 0;
 }
 
