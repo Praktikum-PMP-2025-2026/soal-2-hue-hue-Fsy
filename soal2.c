@@ -10,14 +10,14 @@
 
 #include <stdio.h>
 
-int sumOfSteps (int n) {
-    if (n == 1) {
+int sumOfSteps (int n) { //Fungsi untuk menghitung jumlah langkah
+    if (n == 1) {        //Jika n = 1, maka program langsung selesai
         return 0;
     }
 
-    if (n % 2 == 0) {
+    if (n % 2 == 0) {    //Jika n genap, maka n/2 akan menambah langkah sebanyak 1
         return 1 + sumOfSteps(n / 2);
-    } else {
+    } else {            //Jika n > 1, maka n diubah menjadi 3n + 1, lalu langkah + 1
         return 1 + sumOfSteps(3 * n + 1);
     }
 }
